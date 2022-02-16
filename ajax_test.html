@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ajax_test</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <button id="submit">送信</button>
+  <div id='result'></div>
+  <script>
+  $(function(){
+    $("#result").hide();
+    $("#submit").click(function(event){
+      $.ajax({
+        type: 'GET',
+        url: 'success.html',
+        dataType : 'html'
+      }).done(function(data){
+        $("#result").text(data).show();
+      });
+    });
+  });
+  </script>
+</body>
+</html>
